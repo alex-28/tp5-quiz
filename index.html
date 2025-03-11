@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz sur les langages HTML et CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #0e7777;
+            color: white;
+            text-align: center;
+            padding: 0px;
+        }
+
+        form {
+            width: 60%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #008b8b;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="email"], input[type="date"], select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        input[type="radio"], input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #008b8b;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #54baba;
+        }
+
+        .invalid-feedback {
+            color: red;
+            font-size: 12px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #008b8b;
+            color: white;
+        }
+
+        .wave {
+            position: relative;
+            background: #008b8b;
+            color: white;
+            text-align: center;
+            padding: 1px 1px;
+            clip-path: ellipse(50% 50% at 50% 50%);
+        }
+    </style>
+</head>
+<body>
+    <header class="wave">
+        <p style="font-family: fantasy; font-size: 20px;">Maintenant, c'est à vous!</p>
+        <h1>Quiz sur les langages HTML et CSS</h1>
+        <p style="font-size: 20px; font-family: cursive;">Testez vos connaissances.</p>
+        <img src="C:\Users\USER\Desktop\cv_dedish\проба\image\quiz 1.png" alt="quiz" width="150" height="150">
+    </header>
+    
+    <form action="process.php" method="POST">
+        <section>
+            <h2>Identité</h2>
+            <img src="C:\Users\USER\Desktop\cv_dedish\проба\image\nom.png" alt="nom" width="50" height="50"><label for="nom">Nom :</label> <img src="" alt=""> 
+            <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required><br><br>
+            
+            <img src="C:\Users\USER\Desktop\cv_dedish\проба\image\man.png" alt="man" width="50" height="50"> <label for="prenom">Prénom :</label> 
+            <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom" required><br><br>
+            
+            <img src="C:\Users\USER\Desktop\cv_dedish\проба\image\email.png" alt="imail" width="50" height="50"><label for="email">Email :</label>
+            <input type="email" id="email" name="email" placeholder="Entrez votre adresse email" required>
+            <span class="invalid-feedback">L'email n'est pas valide.</span><br><br>
+        </section>
+        
+        <section>
+            <h2>Date du Quiz</h2>
+            <label for="date_quiz">Date du Quiz :</label>
+            <input type="date" id="date_quiz" name="date_quiz" required><br><br>
+        </section>
+
+        <section>
+            <h2>Questions à choix unique</h2>
+            <label for="question1">Quel est le rôle de la balise <code>&lt;title&gt;</code> ?</label><br>
+            <input type="radio" id="q1a" name="question1" value="a" required>
+            <label for="q1a">Définir le titre de la page</label><br>
+            <input type="radio" id="q1b" name="question1" value="b">
+            <label for="q1b">Définir le style de la page</label><br><br>
+        </section>
+        
+        <section>
+            <h2>Questions à choix multiples</h2>
+            <label for="question2">Cochez les bonnes balises HTML :</label><br>
+            <input type="checkbox" id="q2a" name="question2[]" value="html">
+            <label for="q2a">&lt;html&gt;</label><br>
+            <input type="checkbox" id="q2b" name="question2[]" value="css">
+            <label for="q2b">&lt;css&gt;</label><br><br>
+        </section>
+
+        <section>
+            <h2>Liste déroulante</h2>
+            <label for="question3">Choisissez votre langage préféré :</label><br>
+            <select id="question3" name="question3" required>
+                <option value="html">HTML</option>
+                <option value="css">CSS</option>
+                <option value="js">JavaScript</option>
+            </select><br><br>
+        </section>
+
+        <section>
+            <h2>Zone de texte</h2>
+            <label for="code">Entrez un exemple de code HTML ou CSS :</label><br>
+            <textarea id="code" name="code" rows="4" cols="50" required></textarea><br><br>
+        </section>
+        
+        <form action="process.php" method="POST">
+            <section>
+                <h2>Questions sur HTML</h2>
+                <label>Quelle est la signification de l’acronyme HTML ?</label><br>
+                <input type="text" name="q1" required><br><br>
+                
+                <label>Qui a inventé HTML ?</label><br>
+                <input type="text" name="q2" required><br><br>
+                
+                <label>En quelle année la première version de HTML a-t-elle été publiée ?</label><br>
+                <input type="text" name="q3" required><br><br>
+                
+                <label>Quelle balise est utilisée pour définir le titre d’une page HTML ?</label><br>
+                <input type="text" name="q4" required><br><br>
+                
+                <label>Quel élément HTML est utilisé pour créer un lien hypertexte ?</label><br>
+                <input type="text" name="q5" required><br><br>
+                
+                <label>Comment insérer une image dans une page HTML ?</label><br>
+                <input type="text" name="q6" required><br><br>
+                
+                <label>Quelle est la structure de base d’un document HTML ?</label><br>
+                <textarea name="q7" rows="3" required></textarea><br><br>
+                
+                <label>Quelle est la différence entre les balises &lt;div&gt; et &lt;span&gt; ?</label><br>
+                <input type="text" name="q8" required><br><br>
+                
+                <label>Quelle balise est utilisée pour insérer un paragraphe ?</label><br>
+                <input type="text" name="q9" required><br><br>
+                
+                <label>Comment insérer un commentaire dans un fichier HTML ?</label><br>
+                <input type="text" name="q10" required><br><br>
+            </section>
+            
+            <section>
+                <h2>Questions sur CSS</h2>
+                <label>Que signifie CSS ?</label><br>
+                <input type="text" name="q11" required><br><br>
+                
+                <label>À quoi sert CSS ?</label><br>
+                <input type="text" name="q12" required><br><br>
+                
+                <label>Comment lier un fichier CSS externe à un fichier HTML ?</label><br>
+                <input type="text" name="q13" required><br><br>
+                
+                <label>Quelle propriété CSS permet de changer la couleur du texte ?</label><br>
+                <input type="text" name="q14" required><br><br>
+                
+                <label>Quelle propriété CSS est utilisée pour changer la taille de la police ?</label><br>
+                <input type="text" name="q15" required><br><br>
+                
+                <label>Quelle propriété est utilisée pour définir une image de fond ?</label><br>
+                <input type="text" name="q16" required><br><br>
+                
+                <label>Qu’est-ce que le modèle de boîte en CSS ?</label><br>
+                <input type="text" name="q17" required><br><br>
+                
+                <label>Quelle est la différence entre relative, absolute et fixed en CSS ?</label><br>
+                <input type="text" name="q18" required><br><br>
+                
+                <label>Comment centrer un élément avec CSS ?</label><br>
+                <input type="text" name="q19" required><br><br>
+                
+                <label>Quelle est la différence entre em, rem et px en CSS ?</label><br>
+                <input type="text" name="q20" required><br><br>
+            </section>
+            
+
+        <button type="submit">Envoyer</button>
+    </form>
+
+    <footer>
+        <p>&copy; 2025 Quiz HTML et CSS</p>
+    </footer>
+</body>
+</html>
