@@ -88,19 +88,19 @@
         <p style="font-family: fantasy; font-size: 20px;">Maintenant, c'est à vous!</p>
         <h1>Quiz sur les langages HTML et CSS</h1>
         <p style="font-size: 20px; font-family: cursive;">Testez vos connaissances.</p>
-        <img src="https://github.com/alex-28/tp5-quiz/blob/main/image/quiz%201.png?raw=0" alt="quiz" width="150" height="150">
+        <img src="https://github.com/alex-28/tp5-quiz/blob/main/image/quiz%201.png?raw=true" alt="quiz" width="150" height="150">
     </header>
     
     <form action="process.php" method="POST">
         <section>
             <h2>Identité</h2>
-            <img src="https://github.com/alex-28/tp5-quiz/blob/main/image/nom.png?raw=0" alt="nom" width="50" height="50"><label for="nom">Nom :</label> <img src="" alt=""> 
+            <img src="https://github.com/alex-28/tp5-quiz/blob/main/image/nom.png?raw=true" alt="nom" width="50" height="50"><label for="nom">Nom :</label>
             <input type="text" id="nom" name="nom" placeholder="Entrez votre nom" required><br><br>
             
-            <img src="https://github.com/alex-28/tp5-quiz/blob/main/image/man.png?raw=0" alt="man" width="50" height="50"> <label for="prenom">Prénom :</label> 
+            <img src="https://github.com/alex-28/tp5-quiz/blob/main/image/man.png?raw=true" alt="man" width="50" height="50"> <label for="prenom">Prénom :</label> 
             <input type="text" id="prenom" name="prenom" placeholder="Entrez votre prénom" required><br><br>
             
-            <img src="https://github.com/alex-28/tp5-quiz/blob/main/image/email.png?raw=0" alt="imail" width="50" height="50"><label for="email">Email :</label>
+            <img src="https://github.com/alex-28/tp5-quiz/blob/main/image/email.png?raw=true" alt="imail" width="50" height="50"><label for="email">Email :</label>
             <input type="email" id="email" name="email" placeholder="Entrez votre adresse email" required>
             <span class="invalid-feedback">L'email n'est pas valide.</span><br><br>
         </section>
@@ -113,7 +113,7 @@
 
         <section>
             <h2>Questions à choix unique</h2>
-            <label for="question1">Quel est le rôle de la balise <code>&lt;title&gt;</code> ?</label><br>
+            <p>Quel est le rôle de la balise <code>&lt;title&gt;</code>?</p><br>
             <input type="radio" id="q1a" name="question1" value="a" required>
             <label for="q1a">Définir le titre de la page</label><br>
             <input type="radio" id="q1b" name="question1" value="b">
@@ -122,7 +122,7 @@
         
         <section>
             <h2>Questions à choix multiples</h2>
-            <label for="question2">Cochez les bonnes balises HTML :</label><br>
+            <p>Cochez les bonnes balises HTML :</p><br>
             <input type="checkbox" id="q2a" name="question2[]" value="html">
             <label for="q2a">&lt;html&gt;</label><br>
             <input type="checkbox" id="q2b" name="question2[]" value="css">
@@ -134,6 +134,7 @@
             <h2>Liste déroulante</h2>
             <label for="question3">Choisissez votre langage préféré :</label><br>
             <select id="question3" name="question3" required>
+                <option value="" disabled selected>-- Sélectionnez une option --</option>
                 <option value="html">HTML</option>
                 <option value="css">CSS</option>
                 <option value="js">JavaScript</option>
